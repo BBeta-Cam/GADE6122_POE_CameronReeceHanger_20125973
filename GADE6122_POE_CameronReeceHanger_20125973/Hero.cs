@@ -8,7 +8,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 {
     public class Hero : Character
     {
-        public Hero(int _X, int _Y, int _HP, int _DAMAGE = 2) : base(_X, _Y, _HP, _DAMAGE)
+        public Hero(int _X, int _Y, int _HP, int _DAMAGE = 2) : base(_X, _Y, _HP, _DAMAGE) //hero constructor
         {
 
         }
@@ -22,7 +22,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             else return MovementEnum.NoMovement;
         }
 
-        public override string ToString()
+        public override string ToString() //concatinates all hero stats into one string
         {
             string HeroInfo = "Player Stats: \n";
             HeroInfo += "HP: " + HP.ToString() + "/" + MAXHP.ToString() + "\n";
@@ -31,13 +31,13 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             return HeroInfo;
         }
 
-        bool CheckIfMoveValid(MovementEnum CharacterMove)
+        bool CheckIfMoveValid(MovementEnum CharacterMove) //checks if the player controlling the hero can move to where they want to go unobstructed
         {
             bool Valid = false;
 
             switch (CharacterMove) 
             {
-                case MovementEnum.Left:
+                case MovementEnum.Left: //checks if hero can move left
                     foreach (Tile T in VISION)
                     {
                         if(T.X == X - 1)
@@ -52,7 +52,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
                     break;
 
-                case MovementEnum.Right:
+                case MovementEnum.Right: //checks if hero can move right
                     foreach (Tile T in VISION)
                     {
                         if (T.X == X + 1)
@@ -67,7 +67,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
                     break;
 
-                case MovementEnum.Up:
+                case MovementEnum.Up: //checks if hero can move up
                     foreach (Tile T in VISION)
                     {
                         if (T.Y == Y - 1)
@@ -82,7 +82,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
                     break;
 
-                case MovementEnum.Down:
+                case MovementEnum.Down: //checks if hero can move down
                     foreach (Tile T in VISION)
                     {
                         if (T.Y == Y + 1)
