@@ -8,7 +8,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 {
     public class Map
     {
-        private Tile[,] mapBorder;
+        private Tile[,] mapBorder; //tile array
 
         public Tile[,] MAPBORDER
         {
@@ -62,7 +62,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
         protected Random RAND_NUM_GEN = new Random();
 
-        public Map(int _MINIMUMWIDTH, int _MAXIMUMWIDTH, int _MINIMUMHEIGHT, int _MAXIMUMHEIGHT, int _NUMENEMIES,int GOLDDROPS)
+        public Map(int _MINIMUMWIDTH, int _MAXIMUMWIDTH, int _MINIMUMHEIGHT, int _MAXIMUMHEIGHT, int _NUMENEMIES,int GOLDDROPS)//map constructor
         {
             MAPWIDTH = RAND_NUM_GEN.Next(_MINIMUMWIDTH, _MAXIMUMWIDTH);
             MAPHEIGHT = RAND_NUM_GEN.Next(_MINIMUMHEIGHT, _MAXIMUMHEIGHT);
@@ -75,7 +75,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
             int rand_num = rd.Next(1, 2);
 
-            if(rand_num == 1)
+            if(rand_num == 1) //distinguishes between enemies and chooses one to spawn
             {
                 GOBLIN = new List<Enemy>();
             }
@@ -145,7 +145,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
         public void Create(TileType TypeOfTile, int X = 0, int Y = 0)
         {
-            switch (TypeOfTile) 
+            switch (TypeOfTile) //iterates between options and initiates correct case based on constructor variables
             {
                 case TileType.Barrier:
                     Obstacle NewBarrier = new Obstacle(X, Y, "X", TypeOfTile);
@@ -161,7 +161,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
                     int HeroXPos = RAND_NUM_GEN.Next(0, MAPWIDTH);
                     int HeroYPos = RAND_NUM_GEN.Next(0, MAPHEIGHT);
 
-                    while (MAPBORDER[HeroXPos,HeroYPos].TYPEOFTILE != TileType.Empty)
+                    while (MAPBORDER[HeroXPos,HeroYPos].TYPEOFTILE != TileType.Empty) //checks if the tile is not empty
                     {
                         HeroXPos = RAND_NUM_GEN.Next(0, MAPWIDTH);
                         HeroYPos = RAND_NUM_GEN.Next(0, MAPHEIGHT);
@@ -199,7 +199,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
         }
 
-        void DrawMap(int ENEMIES)
+        void DrawMap(int ENEMIES) //creates map
         {
             for (int i = 0; i < MAPWIDTH; i++)
             {
@@ -223,7 +223,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             }
         }
 
-        public override string ToString()
+        public override string ToString()//sets each new line of the map
         {
             String MapS = "";
 
