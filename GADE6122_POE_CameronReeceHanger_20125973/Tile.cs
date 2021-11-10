@@ -9,7 +9,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
     public abstract class Tile
     {
 
-        protected int x;
+        protected int x; //sets int variables
         protected int y;
         public int X 
         {
@@ -23,7 +23,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             set { y = value; }
         }
 
-        private TileType typeoftile;
+        private TileType typeoftile; //sets type of tile
 
         public TileType TYPEOFTILE 
         { 
@@ -31,7 +31,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             set { typeoftile = value; }
         }
 
-       public Tile(int _X, int _Y, TileType _TYPEOFTILE)
+       public Tile(int _X, int _Y, TileType _TYPEOFTILE) //constructor
         {
             X = _X;
             Y = _Y;
