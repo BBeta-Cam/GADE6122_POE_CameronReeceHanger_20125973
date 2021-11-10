@@ -24,11 +24,11 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
         {
             if(GMAP.PCHARACTER.ReturnMove(Direction) == Direction)
             {
-                GMAP.Create(TileType.Empty, GMAP.PCHARACTER.X, GMAP.PCHARACTER.Y);
+                GMAP.Create(TileType.Empty, GMAP.PCHARACTER.X, GMAP.PCHARACTER.Y); //creates map
 
-                GMAP.PCHARACTER.Move(Direction);
+                GMAP.PCHARACTER.Move(Direction);//allows player to move
 
-                GMAP.MAPBORDER[GMAP.PCHARACTER.X, GMAP.PCHARACTER.Y] = GMAP.PCHARACTER;
+                GMAP.MAPBORDER[GMAP.PCHARACTER.X, GMAP.PCHARACTER.Y] = GMAP.PCHARACTER;// sets the map border
 
                 return true;
             }
@@ -40,7 +40,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             
             foreach (Tile T in GMAP.PCHARACTER.VISION)
             {
-                if(T.X == GMAP.ENEMIES[_Enemy].X && (T.Y == GMAP.ENEMIES[_Enemy].Y))
+                if(T.X == GMAP.ENEMIES[_Enemy].X && (T.Y == GMAP.ENEMIES[_Enemy].Y))//checks if the enemy is within range
                 {
                     EnemyWithinRange = true;
                     break;
@@ -51,7 +51,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             {
                 GMAP.PCHARACTER.Attack(GMAP.ENEMIES[_Enemy]);
                 return "The " + GMAP.ENEMIES[_Enemy].TYPEOFTILE.ToString() + " took " + GMAP.PCHARACTER.DAMAGE.ToString()
-                    + " damage and is left on " + GMAP.ENEMIES[_Enemy].HP.ToString() + "HP.";
+                    + " damage and is left on " + GMAP.ENEMIES[_Enemy].HP.ToString() + "HP."; //returns concatinatd values as one string
             }
             else
             {
@@ -65,6 +65,10 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             {
 
             }
+        }
+        public void MoveEnemies()  //Question 3.3
+        {
+            
         }
     }
 }
