@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace GADE6122_POE_CameronReeceHanger_20125973
 {
     public abstract class Character : Tile
-    {
+    { //cariables to be used later on
         public int GoldPurse;
         protected int hp;
         protected int maxhp;
         protected int damage;
         private List<Tile> vision;
 
-        public int GOLDPURSE
+        public int GOLDPURSE //used to store gold
         {
             get { return GoldPurse; }
             set { GoldPurse = value; }
@@ -38,17 +38,17 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
         }
 
 
-        public List<Tile> VISION
+        public List<Tile> VISION //Tile array
         {
             get { return vision; }
             set { vision = value; }
         }
 
-        private MovementEnum movement;
+        private MovementEnum movement; //Declaring Movement variable
 
         
 
-        protected Character(int _X, int _Y, string _SYMBOL) : base(_X, _Y, _SYMBOL)
+        protected Character(int _X, int _Y, string _SYMBOL) : base(_X, _Y, _SYMBOL) //constructor
         {
             VISION = new List<Tile>();
         }
@@ -68,7 +68,7 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             else return false;
         }
 
-        public virtual bool CheckRange(Character Target)
+        public virtual bool CheckRange(Character Target) //checks range
         {
             int MoveableDistance = 1;
 
@@ -79,9 +79,9 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
             else return false; 
         }
 
-        private int DistanceTo(Character Target)
+        private int DistanceTo(Character Target) //works out distance
         {
-            return Math.Abs(X - Target.X) + Math.Abs(Y - Target.Y);
+            return Math.Abs(X - Target.X) + Math.Abs(Y - Target.Y);//concatinates the results of both coordinates being subtracted from the actual coordinates into one int
         }
 
         public void Move(MovementEnum Move)
