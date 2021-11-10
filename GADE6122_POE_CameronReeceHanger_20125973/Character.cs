@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GADE6122_POE_CameronReeceHanger_20125973
 {
     public abstract class Character : Tile
-    { //cariables to be used later on
+    { //variables to be used later on
         public int GoldPurse;
         protected int hp;
         protected int maxhp;
