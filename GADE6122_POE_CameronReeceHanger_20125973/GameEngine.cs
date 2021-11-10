@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//References:
+//C#.Net Tutorial 21 - Files - Opening and Saving. 2012. YouTube video, added by programminghelporg. [Online].
+//Available at: https://www.youtube.com/watch?v=5hQQg7S_5GQ [Accessed 9 November 2021]
+
 namespace GADE6122_POE_CameronReeceHanger_20125973
 {
     class GameEngine
