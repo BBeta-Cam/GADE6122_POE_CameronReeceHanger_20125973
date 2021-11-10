@@ -8,14 +8,14 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 {
     public class Goblin : Enemy
     {
-        public Goblin(int _X,int _Y, int _STARTINGHP = 10, int _DAMAGE = 1)
+        public Goblin(int _X,int _Y, int _STARTINGHP = 10, int _DAMAGE = 1) //constructor for goblin
         {
 
         }
 
         public override MovementEnum ReturnMove(MovementEnum CharacterMove = MovementEnum.NoMovement)
         {
-            int RandomTile = RandomNum.Next(0, VISION.Count);
+            int RandomTile = RandomNum.Next(0, VISION.Count); 
 
             while (VISION[RandomTile].TYPEOFTILE.Equals(typeof(EmptyTile)))
             {
@@ -24,19 +24,19 @@ namespace GADE6122_POE_CameronReeceHanger_20125973
 
             if (VISION[RandomTile].X > X)
             {
-                return MovementEnum.Right;
+                return MovementEnum.Right; //moves player right
             }
             else if(VISION[RandomTile].X < X)
             {
-                return MovementEnum.Left;
+                return MovementEnum.Left; //moves player left
             }
             else if (VISION[RandomTile].Y > Y)
             {
-                return MovementEnum.Down;
+                return MovementEnum.Down; //moves player down
             }
             else if (VISION[RandomTile].Y < Y)
             {
-                return MovementEnum.Up;
+                return MovementEnum.Up; //moves player up
             }
 
             return MovementEnum.NoMovement;
